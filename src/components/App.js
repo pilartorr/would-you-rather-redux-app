@@ -4,7 +4,7 @@ import '../styles/index.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App text-center">
         Would You Rather?
       </div>
     );
