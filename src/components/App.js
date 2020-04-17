@@ -5,6 +5,7 @@ import Nav from './Nav'
 import Home from './Home';
 import LeaderBoard from './LeaderBoard';
 import NewQuestion from './NewQuestion';
+//import NotFound from './NotFound'
 
 class App extends Component {
   render() {

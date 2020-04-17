@@ -4,6 +4,9 @@ body {
   font-family: sans-serif;
 }
 
+.card-body {
+  height: 270px;
+}
 .user-name {
   color: #007bff;
   position: absolute;
@@ -21,7 +24,47 @@ body {
   border: 1px solid #007bff;
 }
 
+.avatar-div  {
+  height: 163px;
+}
+
+.avatar-div-ananswered {
+  height: 278px;
+}
+
+.avatar-home, .avatar-question, .avatar-ananswered {
+  width: 161px;
+  height: 161px;
+  border-radius: 50%;
+  position: absolute;
+  top: 156px;
+  right: 317px;
+}
+
+.avatar-question {
+  top: 92px;
+  right: 322px;
+}
+
+.avatar-ananswered {
+  top: 135px;
+  right: 322px;
+}
+
 .log-out-container {
   position: relative;
   top: -66px;
+}
+
+.nav-home {
+  width: 50%;
+  margin: auto;
+}
+.btn-question {
+  width: 101%;
+  margin-left: 9px;
+}
+
+.card-body-ananswered  {
+  height: 364px;
 }
