@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { handleInitialData } from '../actions/shared'
 import '../styles/index.css'; 
 import Nav from './Nav'
 import Home from './Home';
@@ -8,6 +10,9 @@ import NewQuestion from './NewQuestion';
 //import NotFound from './NotFound'
 
 class App extends Component {
+  componentDidMount() {
+    this.props.dispatch(handleInitialData())
+  }
   render() {
     return (
       <Router>
@@ -26,4 +31,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect()(App);
