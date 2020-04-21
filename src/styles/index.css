@@ -26,6 +26,7 @@ body {
 
 .avatar-div  {
   height: 163px;
+  position: relative;
 }
 
 .avatar-div-ananswered {
@@ -37,8 +38,8 @@ body {
   height: 161px;
   border-radius: 50%;
   position: absolute;
-  top: 156px;
-  right: 317px;
+  top: 6px;
+  right: 45px;
 }
 
 .avatar-question {

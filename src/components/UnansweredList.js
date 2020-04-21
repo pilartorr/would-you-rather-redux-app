@@ -1,25 +1,32 @@
 import React, { Component, Fragment } from 'react'
-import { Link } from 'react-router-dom'
-import avatar from '../avatar.png'
+import Question from './Question'
+import { connect } from 'react-redux'
 
 class UnansweredList extends Component {
     render() {
         return (
             <Fragment> 
-                <div className="card-body border mx-2 my-2 pb-4">
-                    <p className="card-text lead text-left border-bottom pb-2">User Name asks:</p>
-                    <div className="avatar-div float-left w-50 border-right">
-                        <img src={avatar} className="avatar-home img-circle mr-2" alt="avatar" />
-                    </div>
-                    <div className="float-right w-50">
-                        <h5 className="card-title text-left mt-4 ml-4">Would you rather...</h5>
-                        <p className="card-text text-right mr-4">option one here or...</p>
-                        <Link to='/question' className="btn-question btn btn-primary mt-4">Go to Question</Link>
-                    </div>
-                </div> 
-            </Fragment>
+                <ul className='unanswered-questions list-unstyled'>
+                    {this.props.unansweredQuestions.map((qId) => (
+                        <li key={qId}>
+                            <Question id={qId}/>
+                        </li>
+                    ))}
+                </ul>
+            </Fragment> 
         )
     }
 }
 
-export default UnansweredList
+function mapStateToProps ({ questions, users, authedUser }) {
+    const user = users[authedUser];
+    const answeredQuestions = Object.keys(user.answers)
+      .sort((a,b) => questions[b].timestamp - questions[a].timestamp);
+    return {
+      unansweredQuestions : Object.keys(questions).filter(qId => !answeredQuestions.includes(qId))
+        .sort((a,b) => questions[b].timestamp - questions[a].timestamp)
+    }
+}
+
+
+export default connect(mapStateToProps)(UnansweredList)

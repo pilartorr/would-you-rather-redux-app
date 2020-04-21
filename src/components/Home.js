@@ -1,28 +1,25 @@
-import React, { Component, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import LogOut from './LogOut'
-import QuestionNav from './QuestionNav'
+import QuestionsNav from './QuestionsNav'
+import AnsweredList from './AnsweredList'
 import UnansweredList from './UnansweredList'
-import AnansweredList from './AnansweredList'
 
 
-class Home extends Component {
-    render() {
-        return (
-            <Router>
-                <Fragment>
-                    <LogOut />
-                    <div className="card text-center w-50 m-auto">  
-                        <QuestionNav />             
-                        <div>
-                            <Route path="/" exact component={UnansweredList} />
-                            <Route path="/ananswered" component={AnansweredList} />
-                        </div>
+export default function Home () {
+    return (
+        <Router>
+            <Fragment>
+                <LogOut />
+                <div className="card text-center w-50 m-auto">  
+                    <QuestionsNav />        
+                    <div className="home-dashboard">
+                        <Route path="/" exact component={UnansweredList} />
+                        <Route path="/answered" component={AnsweredList} />
                     </div>
-                </Fragment>     
-            </Router>               
-        )
-    }
+                </div>
+            </Fragment>     
+        </Router>               
+    )
+    
 }
-
-export default Home
