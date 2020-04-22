@@ -1,15 +1,15 @@
 import React, { Component, Fragment } from 'react'
-import Question from './Question'
+import UnansweredQuestion from './UnansweredQuestion'
 import { connect } from 'react-redux'
 
 class UnansweredList extends Component {
     render() {
         return (
             <Fragment> 
-                <ul className='unanswered-questions list-unstyled'>
+                <ul id="unanswered-list" className='list-unstyled'>
                     {this.props.unansweredQuestions.map((qId) => (
                         <li key={qId}>
-                            <Question id={qId}/>
+                            <UnansweredQuestion id={qId}/>
                         </li>
                     ))}
                 </ul>

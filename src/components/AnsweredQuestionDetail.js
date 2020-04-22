@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react'
 import avatar from '../avatar.png'
 
-class AnansweredQuestion extends Component {
+class AnsweredQuestionDetail extends Component {
     render() {
         return (
             <Fragment>
-                <div className="card text-center w-50 m-auto">  
+                <div id="answered-question" className="card text-center w-50 m-auto">  
                     <div className="card-body card-body-ananswered border mx-2 my-2 pb-4">
                         <p className="card-text lead text-left border-bottom pb-2">User Name asks:</p>
                         <div className="avatar-div-ananswered float-left w-50 border-right">
@@ -35,4 +35,4 @@ class AnansweredQuestion extends Component {
     }
 }
 
-export default AnansweredQuestion
+export default AnsweredQuestionDetail

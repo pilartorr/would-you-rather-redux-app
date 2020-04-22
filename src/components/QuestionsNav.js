@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 export default function QuestionsNav () {
     return (
-        <div className="home-navigator card-header">
+        <div id="questions-nav" className="card-header">
             <ul className="nav nav-tabs">
                 <li className="nav-item">
                     <NavLink to='/' exact className="nav-link">

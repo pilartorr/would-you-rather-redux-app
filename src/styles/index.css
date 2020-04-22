@@ -43,8 +43,8 @@ body {
 }
 
 .avatar-question {
-  top: 92px;
-  right: 322px;
+  top: 12px;
+  right: 44px;
 }
 
 .avatar-ananswered {
@@ -68,4 +68,14 @@ body {
 
 .card-body-ananswered  {
   height: 364px;
+}
+
+.optionOne {
+  text-align: center;
+  display: block;
+  width: 267px;
+  padding: 0 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

@@ -11,7 +11,7 @@ export default function Home () {
         <Router>
             <Fragment>
                 <LogOut />
-                <div className="card text-center w-50 m-auto">  
+                <div id="home" className="card text-center w-50 m-auto">  
                     <QuestionsNav />        
                     <div className="home-dashboard">
                         <Route path="/" exact component={UnansweredList} />
