@@ -9,12 +9,12 @@ class NewQuestion extends Component {
                 <form id="new-question-form" className="w-50 border rounded p-4 m-auto">
                     <h3 className="my-4 text-center">Would you rather...</h3>
                     <div className="form-group">
-                        <label for="optionOne">question.optionOne.text.</label>
-                        <input type="text" className="form-control" id="optionOne" />
+                        <label className="lead" for="optionOne">Option One</label>
+                        <input type="text" className="form-control" id="optionOne" placeholder="Please, type here your option one..." />
                     </div>
                     <div className="form-group">
-                        <label for="optionTwo">question.optionTwo.text</label>
-                        <input type="text" className="form-control" id="optionTwo" />
+                        <label className="lead" for="optionTwo">Option Two</label>
+                        <input type="text" className="form-control" id="optionTwo" placeholder="Please, type here your option two..." />
                     </div>
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
