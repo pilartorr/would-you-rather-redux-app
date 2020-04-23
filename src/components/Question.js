@@ -2,18 +2,18 @@ import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-class UnansweredQuestion extends Component {
+class Question extends Component {
     toQuestion = (e, id) => {
         e.preventDefault()
         // Redirect to parent Question.
-        this.props.history.push(`/unanswered-question/${id}`)
+        this.props.history.push(`/question/${id}`)
     }
     render() {
         const { question, user } = this.props
         return (
-            <Fragment>     
+            <Fragment>  
                 <div id="question" className="card-body border mx-2 my-2 pb-4">
-                    <p className="card-text lead text-left border-bottom pb-2"> {user.name}</p>
+                    <p className="card-text lead text-left border-bottom pb-2">{user.name} asks:</p>
                     <div className="avatar-div float-left w-50 border-right">
                         <img src={user.avatarURL} className="avatar-home img-circle mr-2" alt="" />
                     </div>
@@ -24,7 +24,7 @@ class UnansweredQuestion extends Component {
                             Go to Question
                         </button>                       
                     </div>
-                </div> 
+                </div>                
             </Fragment> 
         )
     }
@@ -39,4 +39,4 @@ function mapStateToProps ( { questions, users }, { id }) {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(UnansweredQuestion))
+export default withRouter(connect(mapStateToProps)(Question))

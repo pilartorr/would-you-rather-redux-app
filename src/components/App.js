@@ -10,8 +10,8 @@ import LeaderBoard from './LeaderBoard';
 import NewQuestion from './NewQuestion';
 import Login from './Login'
 import Logout from './LogOut'
-import UnansweredQuestionDetail from './UnansweredQuestionDetail'
-import AnsweredQuestionDetail from './UnansweredQuestionDetail'
+import QuestionDetail from './QuestionDetail'
+//import AnsweredQuestionDetail from './UnansweredQuestionDetail'
 //import NotFound from './NotFound'
 
 class App extends Component {
@@ -32,8 +32,7 @@ class App extends Component {
                   <Route path='/leaderboard' component={LeaderBoard} />
                   <Route path='/newquestion' component={NewQuestion} />
                   <Route exact path='/logout' component={Logout} />
-                  <Route path='/unanswered-question/:id' component={UnansweredQuestionDetail} />
-                  <Route path='/answered-question/:id' component={AnsweredQuestionDetail} />
+                  <Route path='/question/:id' component={QuestionDetail} />
                 </div>
             }
           </div>
