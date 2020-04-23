@@ -31,7 +31,7 @@ class QuestionDetail extends Component {
 
                 <div id="answered-question" className="card text-center w-50 m-auto">  
                     <div className="card-body card-body-ananswered border mx-2 my-2 pb-4">
-                        <p className="card-text lead text-left border-bottom pb-2">user.name</p>
+                        <p className="card-text lead text-left border-bottom pb-2">user.name asked</p>
                         <div className="avatar-div-ananswered float-left w-50 border-right">
                             <img src="user.avatarURL" className="avatar-ananswered img-circle mr-2" alt="avatar" />
                         </div>
@@ -54,7 +54,6 @@ class QuestionDetail extends Component {
                         </div>
                     </div>
                 </div>
-
             </Fragment>
         )
     }
