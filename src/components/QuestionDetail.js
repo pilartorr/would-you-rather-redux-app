@@ -18,11 +18,11 @@ class QuestionDetail extends Component {
                             <h5 className="card-title text-left mt-4 ml-4">Would you rather...</h5>
                             <div className="form-check">
                                 <input className="form-check-input" type="radio" name="exampleRadios" id="optionOne" value="optionOne" checked />
-                                <label className="form-check-label" for="optionOne">question.optionOne.text</label>
+                                <label className="form-check-label" htmlFor="optionOne">question.optionOne.text</label>
                             </div>
                             <div className="form-check">
                                 <input className="form-check-input" type="radio" name="exampleRadios" id="optionTwo" value="optionTwo" checked />
-                                <label className="form-check-label" for="optionTwo">question.optionTwo.text</label>
+                                <label className="form-check-label" htmlFor="optionTwo">question.optionTwo.text</label>
                             </div>
                             <button className="btn-question btn btn-primary mt-4">Submit</button>
                         </div>
