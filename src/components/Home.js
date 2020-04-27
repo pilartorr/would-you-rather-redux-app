@@ -5,15 +5,9 @@ import Question from './Question'
 
 class Home extends Component {
     state = {
-        activeList: '1'
+        activeList: true
     }
-    toggleList(list) {
-        if (this.state.activeList !== list) {
-            this.setState({
-                activeList: list
-            })
-        }
-    }
+    
     render(){
         const { unansweredQuestions, answeredQuestions } = this.props
         return (
@@ -22,37 +16,37 @@ class Home extends Component {
                 <div id="home" className="card text-center w-50 m-auto">  
                     <div id="home-toggle-nav" className="card-header">
                         <ul className="nav nav-tabs">
-                            <li className="nav-item">
-                                <a 
-                                    href="/"
+                            <li className="nav-item mr-2">
+                                <button 
                                     className="nav-link"
-                                    onClick={() => { this.toggleList('1')}}>
+                                    onClick={() => { this.setState({ activeList: true })}}>
                                     Unanswered
-                                </a>
+                                </button>
                             </li>
                             <li className="nav-item">
-                                <a
-                                    href="/"
+                                <button
                                     className="nav-link"
-                                    onClick={() => { this.toggleList('2')}}>
+                                    onClick={() => { this.setState({ activeList: false })}}>
                                     Answered
-                                </a>
+                                </button>
                             </li>
                         </ul>
                     </div>          
-                    <div className="home-dashboard" activelist={this.state.activeList}>
-                        <ul list="1" id="unanswered-list" className='list-unstyled'>
-                            {unansweredQuestions.map((qId) => (
-                                <li key={qId}>
-                                    <Question id={qId}/>
-                                </li>
+                    <div className="home-dashboard">
+                        <ul id="unanswered-list" className='list-unstyled'>
+                            {this.state.activeList && 
+                                unansweredQuestions.map((qId) => (
+                                    <li key={qId}>
+                                        <Question id={qId}/>
+                                    </li>
                             ))}
                         </ul>
-                        <ul list="2" id="answered-list" className='list-unstyled'>
-                            {answeredQuestions.map((qId) => (
-                                <li key={qId}>
-                                    <Question id={qId}/>
-                                </li>
+                        <ul id="answered-list" className='list-unstyled'>
+                            {!this.state.activeList && 
+                                answeredQuestions.map((qId) => (
+                                    <li key={qId}>
+                                        <Question id={qId}/>
+                                    </li>
                             ))}
                         </ul>                       
                     </div>

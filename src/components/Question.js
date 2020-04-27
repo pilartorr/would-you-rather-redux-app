@@ -2,12 +2,14 @@ import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+
 class Question extends Component {
     toQuestion = (e, id) => {
         e.preventDefault()
         // Redirect to parent Question.
         this.props.history.push(`/question/${id}`)
     }
+
     render() {
         const { question, user } = this.props
         return (

@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import LogOut from './LogOut'
+//import LogOut from './LogOut'
 
 class NotFound extends Component {
     render() {

@@ -8,16 +8,16 @@ import Nav from './Nav'
 import Home from './Home';
 import LeaderBoard from './LeaderBoard';
 import NewQuestion from './NewQuestion';
-import Login from './Login'
-import Logout from './LogOut'
 import QuestionDetail from './QuestionDetail'
-//import AnsweredQuestionDetail from './UnansweredQuestionDetail'
-//import NotFound from './NotFound'
+import Login from './Login'
+import NotFound from './NotFound'
+import LogOut from './LogOut'
 
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData())
   }
+
   render() {
     return (
       <Router>
@@ -31,8 +31,9 @@ class App extends Component {
                   <Route path='/' exact component={Home} />
                   <Route path='/leaderboard' component={LeaderBoard} />
                   <Route path='/newquestion' component={NewQuestion} />
-                  <Route exact path='/logout' component={Logout} />
                   <Route path='/question/:id' component={QuestionDetail} />
+                  <Route path='/logout' component={LogOut} />
+                  <Route path='/notfound' component={NotFound} />
                 </div>
             }
           </div>
