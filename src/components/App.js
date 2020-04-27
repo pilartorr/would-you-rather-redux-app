@@ -32,7 +32,6 @@ class App extends Component {
                   <Route path='/leaderboard' component={LeaderBoard} />
                   <Route path='/newquestion' component={NewQuestion} />
                   <Route path='/question/:id' component={QuestionDetail} />
-                  <Route path='/logout' component={LogOut} />
                   <Route path='/notfound' component={NotFound} />
                 </div>
             }

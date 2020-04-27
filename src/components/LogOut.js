@@ -15,7 +15,7 @@ class LogOut extends Component {
                     <img src={user.avatarURL} className="avatar img-circle mr-2" alt="avatar" />
                     <p className="user-name mr-2">{user.name}</p>
                     <button className="btn btn-light">
-                        <NavLink to='/logout' exact className="text-decoration-none">
+                        <NavLink to='/login' exact className="text-decoration-none">
                             Log Out
                         </NavLink>
                     </button>
