@@ -10,8 +10,7 @@ import LeaderBoard from './LeaderBoard';
 import NewQuestion from './NewQuestion';
 import QuestionDetail from './QuestionDetail'
 import Login from './Login'
-import NotFound from './NotFound'
-import LogOut from './LogOut'
+//import NotFound from './NotFound'
 
 class App extends Component {
   componentDidMount() {
@@ -32,7 +31,6 @@ class App extends Component {
                   <Route path='/leaderboard' component={LeaderBoard} />
                   <Route path='/newquestion' component={NewQuestion} />
                   <Route path='/question/:id' component={QuestionDetail} />
-                  <Route path='/notfound' component={NotFound} />
                 </div>
             }
           </div>

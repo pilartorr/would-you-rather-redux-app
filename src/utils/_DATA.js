@@ -137,12 +137,12 @@ function formatQuestion ({ optionOneText, optionTwoText, author }) {
         timestamp: Date.now(),
         author,
         optionOne: {
-        votes: [],
-        text: optionOneText,
+            votes: [],
+            text: optionOneText,
         },
         optionTwo: {
-        votes: [],
-        text: optionTwoText,
+            votes: [],
+            text: optionTwoText,
         }
     }
 }

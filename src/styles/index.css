@@ -68,6 +68,7 @@ body {
 
 .card-body-ananswered  {
   height: 364px;
+  width: 100%;
 }
 
 .optionOne {
