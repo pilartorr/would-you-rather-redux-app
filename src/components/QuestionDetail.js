@@ -27,11 +27,11 @@ class  QuestionDetail extends Component {
             <Fragment>
                 { answered 
                     ? 
-                        <div id="answered-question" className="card text-center w-50 m-auto"> 
+                        <div id="answered-question" className="card w-75 m-auto"> 
                             <div className="card-body card-body-ananswered border mx-2 my-2 pb-4">
                                 <p className="card-text lead text-left border-bottom pb-2">{user.name} asked</p>
                                 <div className="avatar-div-ananswered float-left w-50 border-right">
-                                    <img src={user.avatarURL} className="avatar-ananswered img-circle mr-2" alt="avatar" />
+                                    <img src={user.avatarURL} className="avatar-ananswered img-fluid img-circle mr-2" alt="avatar" />
                                 </div>
                                 <div className="float-right w-50">
                                     <h5 className="card-title text-left mt-4 ml-4">Would you rather...</h5>
@@ -40,36 +40,36 @@ class  QuestionDetail extends Component {
                                         <div className="progress">
                                             <div className="progress-bar" style={{ width: `${percOne}%`, backgroundColor: 'blue' }} role="progressbar" aria-valuenow={percOne} aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
-                                        <p className="mt-1">{optionOneVotes} out of {total} votes</p> 
+                                        <p className="mt-1 text-center" style={{ fontSize: '14px'}}>{optionOneVotes} out of {total} votes</p> 
                                     </div>
                                     <div className="ml-4">
                                         <p>{question.optionTwo.text}</p>
                                         <div className="progress">
                                             <div className="progress-bar" style={{ width: `${percTwo}%`,  backgroundColor: 'blue'  }} role="progressbar" aria-valuenow={percTwo} aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
-                                        <p className="mt-1">{optionTwoVotes} out of {total} votes</p>
+                                        <p className="mt-1 text-center" style={{ fontSize: '14px'}}>{optionTwoVotes} out of {total} votes</p>
                                     </div>                         
                                 </div>
                             </div>
                         </div>
                     : 
-                        <div id="unanswered-question-detail" className="card text-center w-50 m-auto">  
+                        <div id="unanswered-question-detail" className="card w-75 m-auto">  
                             <div className="card-body border mx-2 my-2 pb-4">
                                 <p className="card-text lead text-left border-bottom pb-2">{user.name} asks:</p>
                                 <div className="avatar-div float-left w-50 border-right">
-                                    <img src={user.avatarURL} className="avatar-question img-circle mr-2" alt="" />
+                                    <img src={user.avatarURL} className="avatar-question img-fluid img-circle mr-2" alt="" />
                                 </div>
                                 <form onSubmit={this.submitOption} id="unanswered-question-form" className="float-right w-50">
                                     <h5 className="card-title text-left mt-4 ml-4">Would you rather...</h5>
-                                    <div className="form-check">
+                                    <div className="form-check ml-4">
                                         <input onChange={this.handleOption} checked={this.state.selectedOption === 'optionOne'} className="form-check-input" type="radio" name="optionOne" id="optionOne" value="optionOne" />
-                                        <label className="form-check-label" htmlFor="optionOne">{question.optionOne.text}</label>
+                                        <label className="form-check-label text-left" htmlFor="optionOne">{question.optionOne.text}</label>
                                     </div>
-                                    <div className="form-check">
+                                    <div className="form-check ml-4">
                                         <input onChange={this.handleOption} checked={this.state.selectedOption === 'optionTwo'} className="form-check-input" type="radio" name="optionTwo" id="optionTwo" value="optionTwo" />
-                                        <label className="form-check-label" htmlFor="optionTwo">{question.optionTwo.text}</label>
+                                        <label className="form-check-label text-left" htmlFor="optionTwo">{question.optionTwo.text}</label>
                                     </div>
-                                    <button className="btn-question btn btn-primary mt-4">Submit</button>
+                                    <button className="btn-question btn btn-primary mt-4 ml-4" style={{ width: '93%'}}>Submit</button>
                                 </form>
                             </div>
                         </div>

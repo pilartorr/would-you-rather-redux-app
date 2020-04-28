@@ -43,13 +43,15 @@ body {
 }
 
 .avatar-question {
-  top: 12px;
-  right: 44px;
+  top: 8px;
+  left: 91px;
 }
 
 .avatar-ananswered {
-  top: 135px;
-  right: 322px;
+  width: 233px;
+  height: 233px;
+  top: 103px;
+  left: 92px;
 }
 
 .log-out-container {
@@ -68,7 +70,6 @@ body {
 
 .card-body-ananswered  {
   height: 364px;
-  width: 100%;
 }
 
 .optionOne {
