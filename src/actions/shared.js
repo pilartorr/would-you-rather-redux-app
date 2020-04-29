@@ -19,15 +19,15 @@ export function handleInitialData () {
   }
 }
 
-export function handleAddQuestion (firstOption, secondOption) {
+export function handleAddQuestion ( optionOneText, optionTwoText ) {
   return (dispatch, getState) => {
     const { authedUser } = getState()
 
     dispatch(showLoading())
 
     return saveQuestionApi({
-      firstOption,
-      secondOption,
+      optionOneText,
+      optionTwoText,
       author: authedUser,
     })
       .then((question) => {
