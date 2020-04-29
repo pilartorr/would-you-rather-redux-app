@@ -153,9 +153,9 @@ export function _saveQuestion (question) {
         const formattedQuestion = formatQuestion(question)
 
         setTimeout(() => {
-        questions = {
-            ...questions,
-            [formattedQuestion.id]: formattedQuestion
+            questions = {
+                ...questions,
+                [formattedQuestion.id]: formattedQuestion
         }
         
         users = {
