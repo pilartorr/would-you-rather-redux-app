@@ -1,11 +1,13 @@
 import React, { Component, Fragment } from 'react'
-import { NavLink } from 'react-router-dom'
-import { unsetAuthedUser } from '../actions/authedUser'
+import { NavLink, withRouter } from 'react-router-dom'
+import { setAuthedUser } from '../actions/authedUser'
 import { connect } from 'react-redux'
 
 class LogOut extends Component {
-    ccomponentDidMount () {
-        this.props.dispatch(unsetAuthedUser())
+    handleLogout = () => {
+        const { setAuthedUser, history } = this.props
+        setAuthedUser(null)
+        history.push('/')
     }
     render() {
         const { user } = this.props
@@ -14,11 +16,7 @@ class LogOut extends Component {
                 <div className="log-out-container float-right">
                     <img src={user.avatarURL} className="avatar img-circle mr-2" alt="avatar" />
                     <p className="user-name mr-2">{user.name}</p>
-                    <button className="btn btn-light">
-                        <NavLink to='/login' exact className="text-decoration-none">
-                            Log Out
-                        </NavLink>
-                    </button>
+                    <button className="btn btn-light" onClick={this.handleLogout}>Log Out</button>
                 </div>
             </Fragment>
         )
@@ -31,4 +29,13 @@ function mapStateToProps ( { users, authedUser } ) {
         user
     }
 }
-export default connect(mapStateToProps)(LogOut)
+
+function mapDispatchToProps(dispatch) {
+    return {
+        setAuthedUser: (id) => {
+            dispatch(setAuthedUser(id))
+        }
+    }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LogOut))
