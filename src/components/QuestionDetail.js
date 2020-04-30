@@ -38,14 +38,14 @@ class  QuestionDetail extends Component {
                                     <div className="mb-4 ml-4 border-bottom">
                                         <p>{question.optionOne.text}</p>
                                         <div className="progress">
-                                            <div className="progress-bar" style={{ width: `${percOne}%`, backgroundColor: '#007bff' }} role="progressbar" aria-valuenow={percOne} aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div className="progress-bar" style={{ width: `${percOne}%`, backgroundColor: '#007bff' }} role="progressbar" aria-valuenow={percOne} aria-valuemin="0" aria-valuemax="100">{percOne}%</div>
                                         </div>
                                         <p className="mt-1 text-center" style={{ fontSize: '14px'}}>{optionOneVotes} out of {total} votes</p> 
                                     </div>
                                     <div className="ml-4">
                                         <p>{question.optionTwo.text}</p>
                                         <div className="progress">
-                                            <div className="progress-bar" style={{ width: `${percTwo}%`,  backgroundColor: '#007bff'  }} role="progressbar" aria-valuenow={percTwo} aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div className="progress-bar" style={{ width: `${percTwo}%`,  backgroundColor: '#007bff'  }} role="progressbar" aria-valuenow={percTwo} aria-valuemin="0" aria-valuemax="100">{percTwo}%</div>
                                         </div>
                                         <p className="mt-1 text-center" style={{ fontSize: '14px'}}>{optionTwoVotes} out of {total} votes</p>
                                     </div>                         
@@ -82,7 +82,7 @@ class  QuestionDetail extends Component {
 }
 
 function financial(x) {
-    return Number.parseFloat(x).toFixed(2);
+    return Number.parseFloat(x).toFixed(0);
 }
     
 function mapStateToProps ( { authedUser, questions, users }, props ) {
