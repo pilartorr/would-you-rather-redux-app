@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { handleSaveQuestionAnswer } from '../actions/shared'
+import LogOut from './LogOut'
 
 class  QuestionDetail extends Component {
 
@@ -25,6 +26,7 @@ class  QuestionDetail extends Component {
 
         return (
             <Fragment>
+                <LogOut />
                 { answered 
                     ? 
                         <div id="answered-question" className="card w-75 m-auto"> 

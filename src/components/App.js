@@ -19,23 +19,25 @@ class App extends Component {
 
   render() {
     return (
-      <Router>        
-        <LoadingBar />
-        <div id="router-app" className='container'>
-          <Nav />
-          <Switch>
-            { this.props.authedUser === null
-              ? <Route exact path='/' component={Login} />
-              : <Fragment>
-                  <Route path='/' exact component={Home} />
-                  <Route path='/leaderboard' component={LeaderBoard} />
-                  <Route path='/newquestion' component={NewQuestion} />
-                  <Route path='/question/:id' component={QuestionDetail} />
-                </Fragment>
-            }
-            <Route component={NotFound} />
-          </Switch>
-        </div>   
+      <Router>
+        <Fragment>
+          <LoadingBar />
+          <div id="router-app" className='container'>
+            <Nav />
+            <Switch>
+              { this.props.authedUser === null
+                ? <Route exact path='/' component={Login} />
+                : <Fragment>
+                    <Route path='/' exact component={Home} />
+                    <Route path='/leaderboard' component={LeaderBoard} />
+                    <Route path='/newquestion' component={NewQuestion} />
+                    <Route path='/question/:id' component={QuestionDetail} />
+                  </Fragment>
+              }
+              <Route component={NotFound} />
+            </Switch>
+          </div>
+        </Fragment>
       </Router>
     );
   }
