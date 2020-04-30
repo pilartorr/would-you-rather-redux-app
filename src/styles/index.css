@@ -23,7 +23,11 @@ body {
   top: -5px;
   right: 271px;
 }
-
+.avatar-leaderboard {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
 .avatar-div  {
   height: 163px;
   position: relative;
