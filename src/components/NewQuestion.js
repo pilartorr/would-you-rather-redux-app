@@ -42,7 +42,6 @@ class NewQuestion extends Component {
         if (toHome === true) {
           return <Redirect to='/' />
         }
-        console.log(this.submitOptions)
         return (
             <Fragment>
                 <LogOut />

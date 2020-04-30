@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { NavLink, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { setAuthedUser } from '../actions/authedUser'
 import { connect } from 'react-redux'
 

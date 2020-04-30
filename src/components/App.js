@@ -27,12 +27,12 @@ class App extends Component {
             <Switch>
               { this.props.authedUser === null
                 ? <Route exact path='/' component={Login} />
-                : <div>
+                : <Fragment>
                     <Route path='/' exact component={Home} />
                     <Route path='/leaderboard' component={LeaderBoard} />
                     <Route path='/newquestion' component={NewQuestion} />
                     <Route path='/question/:id' component={QuestionDetail} />
-                  </div>
+                  </Fragment>
               }
               <Route component={NotFound} />
             </Switch>
