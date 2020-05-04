@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
-import LoadingBar from 'react-redux-loading'
+import LoadingBar from 'react-redux-loading-bar'
 import { handleInitialData } from '../actions/shared'
 import '../styles/index.css'; 
 import Nav from './Nav'
