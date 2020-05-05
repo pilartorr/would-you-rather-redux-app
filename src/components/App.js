@@ -12,25 +12,26 @@ import QuestionDetail from './QuestionDetail'
 import Login from './Login'
 import NotFound from './NotFound'
 
+
 class App extends Component {
   componentDidMount() {
     this.props.dispatch((handleInitialData()))
   }
-
+  
   render() {
     return (
       <Router>
         <Fragment>
           <LoadingBar />
           <div id="router-app" className='container'>
-            <Nav />
             <Switch>
               { this.props.authedUser === null
                 ? <Route exact path='/' component={Login} />
                 : <Fragment>
+                    <Nav />
                     <Route path='/' exact component={Home} />
                     <Route path='/leaderboard' component={LeaderBoard} />
-                    <Route path='/newquestion' component={NewQuestion} />
+                    <Route path='/add' component={NewQuestion} />
                     <Route path='/question/:id' component={QuestionDetail} />
                   </Fragment>
               }

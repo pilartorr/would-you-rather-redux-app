@@ -1,4 +1,4 @@
-import { RECEIVE_USERS, SAVE_USER_ANSWER, ADD_USER_POLL } from '../actions/users'
+import { RECEIVE_USERS, SAVE_USER_ANSWER, ADD_USER_QUESTION } from '../actions/users'
 
 export default function users (state = {}, action) {
     switch(action.type) {
@@ -19,7 +19,7 @@ export default function users (state = {}, action) {
                 }
                 }
             }
-        case ADD_USER_POLL: 
+        case ADD_USER_QUESTION: 
             return {
                 ...state,
                 [action.authedUser]: {

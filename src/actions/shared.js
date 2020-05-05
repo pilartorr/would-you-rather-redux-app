@@ -2,7 +2,7 @@ import { getInitialData, saveQuestionApi, saveQuestionAnswerApi} from '../utils/
 import { receiveUsers, addUserQuestion, saveUserAnswer } from '../actions/users'
 import { receiveQuestions, saveQuestionAnswer, addQuestion } from '../actions/questions'
 import { setAuthedUser } from '../actions/authedUser'
-import { showLoading, hideLoading } from 'react-redux-loading'
+import { showLoading, hideLoading } from 'react-redux-loading-bar'
 
 const AUTHED_ID = null
 
