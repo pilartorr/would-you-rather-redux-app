@@ -34,7 +34,7 @@ body {
 }
 
 .avatar-div-ananswered {
-  height: 278px;
+  height: 307px;
 }
 
 .avatar-home, .avatar-question, .avatar-ananswered {
@@ -52,10 +52,10 @@ body {
 }
 
 .avatar-ananswered {
-  width: 233px;
-  height: 233px;
+  width: 272px;
+  height: 272px;
   top: 103px;
-  left: 92px;
+  left: 73px;
 }
 
 .log-out-container {
@@ -73,7 +73,7 @@ body {
 }
 
 .card-body-ananswered  {
-  height: 364px;
+  height: 401px;
 }
 
 .optionOne {

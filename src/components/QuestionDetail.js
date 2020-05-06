@@ -24,6 +24,15 @@ class  QuestionDetail extends Component {
 
         const { question, user, answered, percOne, percTwo, optionOneVotes, optionTwoVotes, total } = this.props
         const { selectedOption } = this.state
+        
+        const selectedOptionStyles = {
+            border: '2px solid #3CB371',
+            backgroundColor: '#98FB98',
+            borderRadius: '25px',
+            padding: '20px',
+            color: '#034303',
+            weight: 'bold'
+        }
 
         return (
             <Fragment>
@@ -38,20 +47,40 @@ class  QuestionDetail extends Component {
                                 </div>
                                 <div className="float-right w-50">
                                     <h5 className="card-title text-left mt-4 ml-4">Would you rather...</h5>
-                                    <div className="mb-4 ml-4 border-bottom">
-                                        <p>{question.optionOne.text}</p>
-                                        <div className="progress">
-                                            <div className="progress-bar" style={{ width: `${percOne}%`, backgroundColor: selectedOption === 'optionOne' ? '#007bff' :  '#9c9c9c'}} role="progressbar" aria-valuenow={percOne} aria-valuemin="0" aria-valuemax="100">{percOne}%</div>
+                                    { selectedOption === 'optionOne' ? 
+                                        <div className="mb-4 ml-4 mt-4 border-bottom" style={selectedOptionStyles}>
+                                            <p>{question.optionOne.text}</p>
+                                            <div className="progress">
+                                                <div className="progress-bar" style={{ width: `${percOne}%`, backgroundColor: '#dc3545'}} role="progressbar" aria-valuenow={percOne} aria-valuemin="0" aria-valuemax="100">{percOne}%</div>
+                                            </div>
+                                            <p className="mt-1 text-center" style={{ fontSize: '14px', marginBottom: '0' }}>{optionOneVotes} out of {total} votes</p> 
                                         </div>
-                                        <p className="mt-1 text-center" style={{ fontSize: '14px'}}>{optionOneVotes} out of {total} votes</p> 
-                                    </div>
-                                    <div className="ml-4">
-                                        <p>{question.optionTwo.text}</p>
-                                        <div className="progress">
-                                            <div className="progress-bar" style={{ width: `${percTwo}%`, backgroundColor:  selectedOption === 'optionTwo' ? '#007bff' :  '#9c9c9c'  }} role="progressbar" aria-valuenow={percTwo} aria-valuemin="0" aria-valuemax="100">{percTwo}%</div>
+                                        :
+                                        <div className="mb-4 ml-4 mt-4 border-bottom">
+                                            <p>{question.optionOne.text}</p>
+                                            <div className="progress">
+                                                <div className="progress-bar" style={{ width: `${percOne}%`, backgroundColor: '#dc3545'}} role="progressbar" aria-valuenow={percOne} aria-valuemin="0" aria-valuemax="100">{percOne}%</div>
+                                            </div>
+                                            <p className="mt-1 text-center" style={{ fontSize: '14px' }}>{optionOneVotes} out of {total} votes</p> 
                                         </div>
-                                        <p className="mt-1 text-center" style={{ fontSize: '14px'}}>{optionTwoVotes} out of {total} votes</p>
-                                    </div>                         
+                                    }
+                                    { selectedOption === 'optionTwo' ? 
+                                        <div className="ml-4" style={selectedOptionStyles}>
+                                            <p>{question.optionTwo.text}</p>
+                                            <div className="progress">
+                                                <div className="progress-bar"  style={{ width: `${percTwo}%`, backgroundColor: '#dc3545'}} role="progressbar" aria-valuenow={percTwo} aria-valuemin="0" aria-valuemax="100">{percTwo}%</div>
+                                            </div>
+                                            <p className="mt-1 text-center" style={{ fontSize: '14px', marginBottom: '0'}}>{optionTwoVotes} out of {total} votes</p>
+                                        </div> 
+                                        :
+                                        <div className="ml-4">
+                                            <p>{question.optionTwo.text}</p>
+                                            <div className="progress">
+                                                <div className="progress-bar"  style={{ width: `${percTwo}%`, backgroundColor: '#dc3545'}} role="progressbar" aria-valuenow={percTwo} aria-valuemin="0" aria-valuemax="100">{percTwo}%</div>
+                                            </div>
+                                            <p className="mt-1 text-center" style={{ fontSize: '14px'}}>{optionTwoVotes} out of {total} votes</p>
+                                        </div> 
+                                    }                                                         
                                 </div>
                             </div>
                         </div>
