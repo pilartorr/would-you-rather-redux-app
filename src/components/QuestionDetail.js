@@ -28,7 +28,7 @@ class  QuestionDetail extends Component {
         const selectedOptionStyles = {
             border: '2px solid #3CB371',
             backgroundColor: '#98FB98',
-            borderRadius: '25px',
+            borderRadius: '10px',
             padding: '20px',
             color: '#034303',
             weight: 'bold'

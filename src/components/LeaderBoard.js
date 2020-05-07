@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 class LeaderBoard extends Component {
     render() {
         const { usersList } = this.props
-        console.log(usersList)
+
         return (
             <Fragment>
                 <LogOut />

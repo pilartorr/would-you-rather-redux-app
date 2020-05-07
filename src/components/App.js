@@ -23,7 +23,7 @@ class App extends Component {
       <Router>
         <Fragment>
           <LoadingBar />
-          <div id="router-app" className='container'>
+          <div id="router-app" className='app-container container'>
             <Switch>
               { this.props.authedUser === null
                 ? <Route exact path='/' component={Login} />
