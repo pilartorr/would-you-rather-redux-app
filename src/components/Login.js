@@ -23,17 +23,12 @@ class Login extends Component {
         event.preventDefault();
 
         const { authUserId } = this.state
-        const { authenticate } = this.props
+        const { authenticate, history, location } = this.props
 
         if(authUserId) {
             authenticate(authUserId)
-        } else {
-            alert('Please select a user before')
+            history.push(location.pathname)
         }
-
-        const { history } = this.props;
-        let { from } = history.location.state || { from: { pathname: "/" } };
-        history.replace(from);
     }
     render() {
         const { authUserId } = this.state

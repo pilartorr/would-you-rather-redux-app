@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+import NotFound from './NotFound'
 
 class Question extends Component {
     toQuestion = (e, id) => {
@@ -11,6 +12,8 @@ class Question extends Component {
     render() {
         const { question, user } = this.props
 
+        if(!question.id) return <NotFound />
+        
         return (
             <Fragment>               
                 <div id="question" className="card-body border mx-2 my-2 pb-4">
