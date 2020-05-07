@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react'
-import { Redirect, Link } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
+import LogOut from './LogOut'
 
 class NotFound extends Component {
     render() {     
         return (
             <Fragment>
-                <Redirect to='not-found' />
+                <LogOut />
                 <div className="not-found container m-auto w-50">
                     <div className="mt-4">
                         <div className="alert alert-danger" role="alert" style={{ marginTop: '50%'}}>

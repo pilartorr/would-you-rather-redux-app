@@ -23,11 +23,10 @@ class Login extends Component {
         event.preventDefault();
 
         const { authUserId } = this.state
-        const { authenticate, history, location } = this.props
+        const { authenticate } = this.props
 
         if(authUserId) {
             authenticate(authUserId)
-            history.push(location.pathname)
         }
     }
     render() {

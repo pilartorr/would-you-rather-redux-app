@@ -25,17 +25,18 @@ class App extends Component {
           <LoadingBar />
           <div id="router-app" className='app-container container'>
             <Switch>
-              { this.props.authedUser === null
-                ? <Route exact path='/' component={Login} />
+              { this.props.authedUser === null 
+                ? <Route path="/" component={Login} />
                 : <Fragment>
                     <Nav />
                     <Route path='/' exact component={Home} />
                     <Route path='/leaderboard' component={LeaderBoard} />
                     <Route path='/add' component={NewQuestion} />
-                    <Route path='/question/:id' component={QuestionDetail} />
+                    <Route path='/question/:id' component={QuestionDetail} />   
+                    <Route path='/not-found' component={NotFound} />                               
                   </Fragment>
               }
-              <Route component={NotFound} />
+              
             </Switch>
           </div>
         </Fragment>

@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { handleSaveQuestionAnswer } from '../actions/shared'
 import LogOut from './LogOut'
+//import NotFound from './NotFound'
 
 class  QuestionDetail extends Component {
 
@@ -32,6 +34,12 @@ class  QuestionDetail extends Component {
             padding: '20px',
             color: '#034303',
             weight: 'bold'
+        }
+        
+        //if(typeof allQuestionsIds.indexOf(question.id) === -1){ return <NotFound /> }
+
+        if (!this.props.isWrongID) {
+            return <Redirect to='/not-found' />
         }
 
         return (
@@ -134,8 +142,17 @@ function mapStateToProps ( { authedUser, questions, users }, props ) {
 
     const percOne = financial((question.optionOne.votes.length / total) * 100);
     const percTwo = financial((question.optionTwo.votes.length / total) * 100);
+    
+    //const allQuestionsIds = Object.keys(questions)
+
+    if (question === undefined) {
+        return {
+            isWrongID: true
+        }
+    }
 
     return {
+        //allQuestionsIds,
         question, 
         user,
         answered,
@@ -150,6 +167,7 @@ function mapStateToProps ( { authedUser, questions, users }, props ) {
 function mapDispatchToProps (dispatch, props) {
     const path = props.location.pathname.split('/')
     const questionID = path[2]
+    
     return {
         saveQuestionAnswer : (answer) => {
             dispatch(handleSaveQuestionAnswer(questionID, answer))
