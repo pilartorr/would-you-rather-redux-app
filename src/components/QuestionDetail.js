@@ -38,7 +38,7 @@ class  QuestionDetail extends Component {
         
         //if(typeof allQuestionsIds.indexOf(question.id) === -1){ return <NotFound /> }
 
-        if (!this.props.isWrongID) {
+        if (this.props.isWrongID) {
             return <Redirect to='/not-found' />
         }
 
